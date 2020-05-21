@@ -1,0 +1,258 @@
+// @import url("https://fonts.googleapis.com/css?family=Spartan:500,700&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam:wght@400;500;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; //1rem = 10px; 10px/16px = 62.5%
+
+  @include respond(tab-land) {
+    font-size: 56.25%; //1rem  = 9px; 9/16 = 56.25%
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%; //1rem  = 8px; 8/16 = 50%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; //1rem  = 12px; 12/16 = 75%
+  }
+}
+//## Colors
+
+// ### Primary
+
+// Bright Red: hsl(12, 88%, 59%)
+// Dark Blue: hsl(228, 39%, 23%)
+
+// ### Neutral
+
+// Dark Grayish Blue: hsl(227, 12%, 61%)
+// Very Dark Blue: hsl(233, 12%, 13%)
+// Very Pale Red: hsl(233, 12%, 13%)
+// Vary Light Gray: hsl(0, 0%, 98%)
+
+// ## Typography
+
+// ### Body Copy
+
+// - Font size: 16px
+
+// ### Font
+
+// - Family: [Be Vietnam](https://fonts.google.com/specimen/Be+Vietnam)
+// - Weights: 400, 500, 700
+
+// ## Icons
+
+// For the social icons, you can use the icons provided or a font icon library. Some suggestions for font icon libraries can be found below:
+
+// - [Font Awesome](https://fontawesome.com)
+// - [IcoMoon](https://icomoon.io)
+// - [Ionicons](https://ionicons.com)
+
+:root {
+  --bright-red: hsl(12, 88%, 59%);
+  --dark-blue: hsl(228, 39%, 23%);
+
+  --primary: var(--bright-red);
+
+  --dark-grayish-blue: hsl(227, 12%, 61%);
+  --very-dark-blue: hsl(233, 12%, 13%);
+  --very-pale-red: hsl(13, 100%, 96%);
+  --very-light-gray: hsl(0, 0%, 98%);
+
+  --white: #fff;
+
+  --defaut-font-size: 1.6rem;
+}
+
+body {
+  position: relative;
+  box-sizing: border-box;
+
+  background-color: var(--white);
+  color: var(--dark-grayish-blue);
+  font-size: var(--default-font-size);
+  font-family: "Be Vietnam", sans-serif;
+  &::before {
+    content: "";
+    background-image: url("../images/bg-tablet-pattern.svg");
+
+    background-repeat: no-repeat;
+    background-position: top -20rem right -11rem;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+}
+h1,
+h2,
+h3,
+h4 {
+  color: var(--dark-blue);
+  font-weight: 400;
+  line-height: 1.2;
+}
+h1 {
+  font-size: 4.5rem;
+  font-weight: 700;
+}
+h2 {
+  font-size: 3.25rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+h3 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+p {
+  font-size: 1.25rem;
+  line-height: 1.75;
+}
+.p-sm {
+  font-size: 1rem;
+}
+
+.container {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns:
+    1fr minmax(2rem, 1fr)
+    minmax(min-content, 75vw)
+    minmax(2rem, 1fr) 1fr;
+
+  grid-gap: 4rem 0;
+  // justify-items: center;
+  align-items: center;
+  padding: 4rem 0;
+}
+.bg-white {
+  background-color: var(--white);
+}
+.bg-lt-gray {
+  background-color: var(--very-light-gray);
+}
+.bg-gray {
+  background-color: var(--dark-grayish-blue);
+}
+.bg-primary {
+  background-color: var(--primary);
+  color: var(--very-light-gray);
+}
+.bg-dark {
+  background-color: var(--very-dark-blue);
+  color: var(--white);
+}
+.color-light {
+  color: var(--very-light-gray);
+}
+.center-col {
+  grid-column: 3/4;
+}
+
+.flex {
+  display: flex;
+  position: relative;
+}
+.grid {
+  display: grid;
+  position: relative;
+}
+.center {
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+.left,
+.left-mobile-center {
+  justify-content: flex-start;
+  justify-items: flex-start;
+  align-items: center;
+  text-align: left;
+}
+.right {
+  justify-content: flex-end;
+  justify-items: flex-end;
+  align-items: center;
+  text-align: right;
+}
+.full-width {
+  grid-column: 1/-1;
+}
+.col-1 {
+  grid-template-columns: 1fr;
+  grid-gap: 3rem;
+}
+.col-2 {
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+}
+.col-2-1fr-min {
+  grid-template-columns: 1fr min-content;
+  grid-gap: 1rem;
+}
+.col-3 {
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 3rem 1rem;
+}
+.col-4 {
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem 4rem;
+}
+.col-5 {
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1rem;
+}
+
+.hide {
+  display: none;
+}
+
+@include respond(tab-port) {
+  .container {
+    grid-template-columns:
+      4rem 1fr
+      minmax(min-content, 200rem)
+      1fr 4rem;
+  }
+}
+@include respond(phone) {
+  .col-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@include respond(med-phone) {
+  .col-2,
+  .col-3,
+  .col-4 {
+    grid-template-columns: 1fr;
+  }
+  .left-mobile-center {
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+@include respond(sm-phone) {
+  .container {
+    grid-template-columns:
+      2rem 1fr
+      minmax(min-content, 200rem)
+      1fr 2rem;
+  }
+}

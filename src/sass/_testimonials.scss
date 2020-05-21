@@ -1,0 +1,29 @@
+.testimonials {
+  padding: 2.5rem;
+}
+.testimonial {
+  &-card {
+    padding: 2.5rem;
+    padding-top: 8rem;
+    margin-top: 10rem;
+    &-avatar {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10rem;
+    }
+  }
+  &-dot {
+    background-color: var(--very-pale-red);
+    border: 1px solid var(--primary);
+    &-active {
+      background-color: var(--primary);
+    }
+  }
+}
+.dot {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+}

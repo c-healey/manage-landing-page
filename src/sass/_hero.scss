@@ -1,0 +1,39 @@
+.hero {
+  justify-content: space-between;
+  align-items: center;
+  // margin-top: -8rem;
+  &-col-1 {
+    grid-gap: 3rem;
+    // padding: 12rem 0;
+  }
+  // &-col-2 {
+  //   padding-left: 10rem;
+  //   position: relative;
+  //   overflow: hidden;
+  //   background-position: bottom 4rem left;
+  //   background-repeat: no-repeat;
+  //   background-size: 150% auto;
+  //   z-index: 10;
+  // }
+}
+.bg-img {
+  width: 100%;
+}
+@include respond(tab-port) {
+  .hero {
+    &-col-2 {
+      padding: 0;
+    }
+    h1 {
+      font-size: 4rem;
+    }
+  }
+}
+@include respond(phone) {
+  .hero {
+    grid-template-columns: 1fr;
+    &-col-2 {
+      grid-row: 1/1;
+    }
+  }
+}

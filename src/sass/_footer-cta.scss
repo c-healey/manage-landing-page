@@ -1,0 +1,27 @@
+.footer-cta {
+  &::before {
+    content: "";
+    background-image: url("../images/bg-simplify-section-desktop.svg");
+
+    background-repeat: no-repeat;
+    background-position: top -12rem right -20rem;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  &-inner {
+    align-items: flex-start;
+    justify-items: flex-end;
+    justify-content: space-between;
+    text-align: left;
+    padding: 1.5rem 0;
+    &-btn {
+      font-weight: 700;
+    }
+  }
+  @include respond(phone) {
+    &::before {
+      background-image: url("../images/bg-simplify-section-mobile.svg");
+    }
+  }
+}

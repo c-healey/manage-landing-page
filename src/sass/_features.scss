@@ -1,0 +1,46 @@
+.features {
+  align-items: flex-start;
+  grid-gap: 10rem 8rem;
+}
+.feature {
+  &-card {
+    &-item {
+      grid-template-columns: min-content 1fr;
+      grid-gap: 2rem;
+      > h4 {
+        line-height: 2.2;
+      }
+    }
+    &-btn {
+      // grid-row: 1 / span 2;
+      align-self: flex-start;
+
+      padding: 1rem 2.5rem;
+    }
+    &-summary {
+      grid-column: 2/2;
+    }
+  }
+}
+
+@include respond(med-phone) {
+  .feature {
+    &-card {
+      &-item {
+        grid-gap: 2rem 0;
+      }
+      &-btn-title {
+        background-color: (var(--very-pale-red));
+        justify-self: stretch;
+        padding-right: 5rem;
+      }
+      &-btn-bg {
+        border-top-left-radius: 10rem;
+        border-bottom-left-radius: 10rem;
+      }
+      &-summary {
+        grid-column: 1/-1;
+      }
+    }
+  }
+}
