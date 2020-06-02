@@ -5,7 +5,7 @@ class Hero extends React.Component {
     return (
       <div className="container ">
         <div className="center-col grid col-2 left hero">
-          <div className="grid left hero-col-1">
+          <div className="grid left-mobile-center hero-col-1">
             <h1>Bring everyone together to build better products.</h1>
             <p className="p-large">
               Manage makes it simple for software teams to plan day-to-day tasks

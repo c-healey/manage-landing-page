@@ -81,15 +81,42 @@ body {
   color: var(--dark-grayish-blue);
   font-size: var(--default-font-size);
   font-family: "Be Vietnam", sans-serif;
-  &::before {
+  &::before,
+  &::after {
     content: "";
     background-image: url("../images/bg-tablet-pattern.svg");
-
+    background-size: 750px 750px;
     background-repeat: no-repeat;
-    background-position: top -20rem right -11rem;
     position: absolute;
     height: 100%;
     width: 100%;
+    z-index: -1;
+  }
+  &::before {
+    background-position: top -5rem left 55vw;
+    @include respond(tab-land) {
+      background-position: top -25rem left 55vw;
+    }
+    @include respond(tab-port) {
+      background-position: top -35rem left 55vw;
+    }
+    @include respond(phone) {
+      background-position: top -10rem left 15vw;
+    }
+    @include respond(med-phone) {
+      background-position: top -30rem left 15vw;
+    }
+    @include respond(sm-phone) {
+      background-position: top -35rem left 15vw;
+    }
+  }
+  &::after {
+    background-position: top 1% right 75vw;
+    top: 42%;
+    @include respond(med-phone) {
+      background-position: top -30rem left 15vw;
+      background-size: 650px 650px;
+    }
   }
 }
 h1,

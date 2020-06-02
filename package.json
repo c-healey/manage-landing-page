@@ -1,6 +1,9 @@
 {
+  "comments": {
+    "note": "Add the following line after name before deploying to gh-pages",
+    "homepage": "https://c-healey.github.io/manage-landing-page"
+  },
   "name": "manage-landing-page",
-  "homepage": "https://c-healey.github.io/manage-landing-page",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

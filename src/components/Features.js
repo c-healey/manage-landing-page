@@ -43,9 +43,9 @@ const featureItem = () => {
 
 const Features = () => {
   return (
-    <div className="container">
+    <div className="container features-container">
       <div className="center-col grid col-2 left features">
-        <div className="grid col-1 left ">
+        <div className="grid col-1 left-mobile-center ">
           <h2>What’s different about Manage?</h2>
           <p className="feature-summary">
             Manage provides all the functionality your team needs, without the
